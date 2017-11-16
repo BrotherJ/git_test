@@ -1,0 +1,57 @@
+/*
+bar相关css
+pzhang
+2017.8.8
+*/
+
+.nav_custom {
+    background-color: #103769;
+    opacity: 0.8;
+    color: #fff;
+}
+
+.maincontent {
+    height: 100%;
+    margin: 0 auto;
+    min-width: 320px !important;
+    overflow: hidden;
+    margin-left: 15%;
+    margin-top: 50px;
+}
+
+.x-small {
+    font-size: x-small;
+}
+
+.navbar-header .navbar-brand {
+    color: #fff;
+}
+
+.tb_userInfo {
+    color: #000;
+    padding: 10px;
+    width: 220px;
+}
+
+.tb_userInfo table {
+    width: 100%;
+}
+
+.div_leftContent {
+    min-height: 600px;
+    padding: 0 15px;
+}
+
+
+.div_title {
+    padding-left: 15px;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 15px;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.div_title * {
+    font-size: 15px;
+}

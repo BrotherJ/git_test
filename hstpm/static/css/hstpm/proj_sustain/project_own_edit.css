@@ -1,0 +1,268 @@
+/*
+项目运维-我负责的项目页面相关css
+pzhang
+2017.8.11
+*/
+.div_op_btn {
+    text-align: right;
+    margin-right: 6%;
+}
+
+.div_op_btn button {
+    margin-right: 10px;
+    margin-top: 20px;
+}
+
+.tb_approve {
+    width: 100%;
+    line-height: 35px;
+    margin-top: 20px;
+}
+
+.tb_approve input[type=text], .tb_approve select {
+    min-width: 200px;
+}
+
+.tb_approve_sub {
+    width: 100%;
+    border-top: 1px solid #ccc;
+    margin-top: 20px;
+}
+
+.td_label {
+    width: 18%;
+}
+
+.td_value {
+    width: 35%;
+}
+
+.input_long {
+    width: 86%;
+    font-size: 12px;
+}
+
+.div_userList {
+    display: inline-block;
+    z-index: 100;
+    vertical-align: top;
+}
+
+.div_userList > span {
+    display: inline-block;
+    padding: 0 3px;
+    min-width: 200px;
+    line-height: 25px;
+    height: 25px;
+    border: 1px solid #999;
+    text-align: left;
+}
+
+.div_userList_ul {
+    position: absolute;
+	background-color: #fff;
+	max-height: 260px;
+	overflow-y: auto;
+	border: 1px solid #ccc;
+	margin-top: -6px;
+	z-index: 100;
+}
+
+.div_userList > div > ul {
+    padding: 4px 0;
+    line-height: 25px;
+    width: auto;
+    min-width: 200px;
+}
+
+.div_userList > div > ul > li {
+    text-align: left;
+    padding: 0 11px;
+}
+
+.div_userList > div > ul > li input{
+    float: right;
+    width: 15px;
+    height: 15px;
+    margin-right: 7px;
+    margin-top: 5px;
+}
+
+.check_show {
+    vertical-align: middle;
+    margin: 0 10px;
+    height: 15px;
+    width: 15px;
+}
+
+.img_updown {
+    float: right;
+    margin-top: 10px;
+    margin-right: 3px;
+}
+
+.div_oplog {
+    margin-top: 20px;
+}
+
+.div_oplog p {
+    margin: 0 auto;
+}
+
+.td_align {
+    text-align: left;
+    padding-left: 5%;
+}
+
+.tb_approve textarea{
+    width: 90%;
+    height: 80px;
+    line-height: 20px;
+}
+
+.textarea_progresss {
+    display: inline-block !important;
+    width: 70% !important;
+    height: 60px !important;
+}
+
+.span_progress {
+    display: inline-block;
+    width: 20%;
+    vertical-align: top;
+}
+
+.td_bug_a {
+    text-align: left;
+}
+
+.td_bug_a a {
+    margin-right: 10px;
+}
+
+.span_occupy {
+    display: inline-block;
+    width: 5px;
+}
+
+.p_progress_content {
+    border: 1px solid #ccc;
+    text-align: left;
+    width: 95%;
+    height: 60px;
+    max-height: 60px;
+    overflow-y: auto;
+    margin: 0;
+    padding: 0;
+    line-height: 20px;
+}
+
+.span_progress_content {
+    display: inline-block;
+    border: 1px solid #ccc;
+    height: 60px;
+    max-height: 60px;
+    overflow-y: auto;
+    text-align: left;
+    width: 70%;
+    line-height: 20px;
+}
+
+.span_bug {
+    display: inline-block;
+    height: 25px;
+    line-height: 25px;
+    vertical-align: middle;
+    border: 1px solid #ccc;
+    width: 93%;
+}
+
+.index_li {
+    color: #fff;
+    background: #428dea;
+}
+
+.div_bug_map {
+    width: 82%;
+    margin-left: 13%;
+    border: 1px solid #bbb;
+}
+
+.div_addedBug {
+    margin: 0 auto;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+#bugMapListTd .td_label {
+    width: 130px;
+}
+
+.tb_bug {
+    width: 88%;
+}
+
+.tb_bug input {
+    width: 74%;
+    border: 1px solid #ccc;
+}
+
+.tb_bug textarea {
+    height: 50px;
+    vertical-align: middle;
+    border: 1px solid #ccc;
+}
+
+#bugMapListTd hr {
+    width: 90%;
+    border-top: 2px solid #ccc;
+    margin: 0 auto;
+}
+
+#bugMapListTd .close {
+    color: #ff3b00;
+    opacity: 0.8;
+}
+
+#bugMapListTd .close .glyphicon-remove {
+    font-size: 17px !important;
+}
+
+#bugMapListTd .close:hover {
+    opacity: 1;
+}
+
+.div_bug_his {
+    line-height: 25px;
+    width: 82%;
+    margin-left: 13%;
+    border: 1px solid #bbb;
+}
+
+.div_bug_his span {
+    display: inline-block;
+    width: 150px;
+    border: 1px solid #ccc;
+    height: 22px;
+    text-align: left;
+    padding-left: 10px;
+}
+
+#his_bugAdded hr {
+    width: 93%;
+    border-top: 2px solid #ccc;
+    margin: 0 auto;
+}
+
+#his_bugAdded .tb_bug {
+    width: 95%;
+}
+
+#his_bugAdded .td_label {
+    width: 110px;
+}
+
+#sustainHistoryDialog .tb_approve {
+    line-height: 25px;
+}

@@ -1,0 +1,99 @@
+<!--
+项目查询页面
+pzhang
+2017.8.11
+-->
+
+{% extends "../../public/head.html" %}
+
+{% block cssLink %}
+    <link href="{{ static_url('thirdpart/bootstrap-daterangepicker-master/daterangepicker.css') }}" rel="stylesheet">
+    <link href="{{ static_url('css/hstpm/proj_sustain/project_query.css') }}" rel="stylesheet">
+{% end %}
+
+{% block content %}
+<!--搜索所有项目表单-->
+<div class="div_search_project" id="searchForm" onkeypress="enterToSearch(event, 'searchProjectList(1)')">
+    <input type="text" placeholder="项目名称" id="nameInput">
+    <input type="text" placeholder="项目创建时间" id="createTimeInput" style="width: 148px;">
+    <select id="prioritySelect" onchange="searchProjectList(1)">
+        <!--项目优先级-->
+        <option value="">优先级</option>
+        <option value="p0">p0</option>
+        <option value="p1">p1</option>
+        <option value="p2">p2</option>
+        <option value="p3">p3</option>
+        <option value="p4">p4</option>
+        <option value="p5">p5</option>
+    </select>
+    <select id="statusSelect" onchange="searchProjectList(1)">
+        <!--项目状态-->
+    </select>
+    <select id="creatorSelect" onchange="searchProjectList(1)">
+        <!--申请人-->
+        <option value="">申请人</option>
+        {% for each_submitter in submitter_list %}
+            <option value="{{each_submitter['user_id']}}">{{each_submitter['user_showname']}}</option>
+        {% end %}
+    </select>
+    <select id="ownerSelect" onchange="searchProjectList(1)">
+        <!--负责人-->
+        <option value="">负责人</option>
+        {% for each_owner in owner_list %}
+            <option value="{{each_owner['user_id']}}">{{each_owner['user_showname']}}</option>
+        {% end %}
+    </select>
+    <button type="button" class="btn btn-primary btn-xs" onclick="searchProjectList(1)">搜索</button>
+    <button type="button" class="btn btn-danger btn-xs" onclick="resetForm('searchForm')">重置</button>
+</div>
+
+<!--搜索结果显示列表-->
+<table class="table table-striped table-bordered table-hover table-condensed" id="tableProjectList">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>名称</th>
+        <th>创建时间</th>
+        <th>状态</th>
+        <!--<th>测试内容</th>-->
+        <!--<th>测试进度</th>-->
+        <th>申请人</th>
+        <th>负责人</th>
+        <!--<th>测试人</th>-->
+        <!--<th>优先级</th>-->
+        <th>风险</th>
+        <th>开始时间</th>
+        <th>结束时间</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
+
+<!--分页信息-->
+<div class="row div_page">
+    <div class="col-md-4" onkeypress="enterToSearch(event, 'searchProjectList(1)')">
+        每页&nbsp;<input type="number" min="0" max="100" id="pageSize" class="input_count text-center" value="10" >&nbsp;条记录
+    </div>
+    <div class="col-md-4 text-center">
+        共&nbsp;<span id="totalPage"></span>&nbsp;页
+        &nbsp;&nbsp;&nbsp;
+        共&nbsp;<span id="totalRecord"></span>&nbsp;条记录
+    </div>
+    <div class="col-md-4 text-right" onkeypress="enterToSearch(event, 'searchProjectList(\'currentpage\')')">
+        <a id="firstPage"><span class="glyphicon glyphicon-step-backward"></span></a>
+        <a id="previousPage"><span class="glyphicon glyphicon-chevron-left"></span></a>
+        第&nbsp;<input type="number" min="1" id="currentPage" class="input_count text-center" value="1">&nbsp;页
+        <a id="nextPage"><span class="glyphicon glyphicon-chevron-right"></span></a>
+        <a id="lastPage"><span class="glyphicon glyphicon-step-forward"></span></a>
+    </div>
+</div>
+
+{% end %}
+
+{% block scriptImport %}
+    <script src="{{static_url('thirdpart/bootstrap-daterangepicker-master/moment.min.js')}}"></script>
+    <script src="{{static_url('thirdpart/bootstrap-daterangepicker-master/daterangepicker.js')}}"></script>
+    <script src="{{ static_url('js/hstpm/proj_sustain/project_query.js') }}"></script>
+{% end %}

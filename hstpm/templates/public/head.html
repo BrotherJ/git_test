@@ -1,0 +1,128 @@
+<!--
+页面框架及topbar代码
+pzhang
+2016.12.28
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{title}}</title>
+
+    <link href="{{ static_url('thirdpart/bootstrap-3.3.5/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ static_url('css/global.css') }}" rel="stylesheet">
+    <link href="{{ static_url('css/head.css') }}" rel="stylesheet">
+    <link href="{{ static_url('css/leftBar.css') }}" rel="stylesheet">
+
+    <!--子类需用的css导入模块-->
+    {% block cssLink %}{% end %}
+
+</head>
+<body>
+    <nav class="nav navbar-inverse navbar-fixed-top nav_custom">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle show pull-left" data-target="sidebar">
+                    <span class="sr-only">Toggle navgation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/hstpm/index">HSTPM</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            <span class="glyphicon glyphicon-user"></span>
+                            {{user["showname"]}}
+                            <span class="caret"></span>
+                        </a>
+                        <div class="dropdown-menu tb_userInfo" role="menu">
+                            <table class="table-condensed">
+                                <tbody>
+                                <tr>
+                                    <td>用户ID：</td>
+                                    <td>{{user["id"]}}</td>
+                                </tr>
+                                <tr>
+                                    <td>部门：</td>
+                                    <td>{{user["department"]}}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid all" style="padding: 0;">
+        <div id="sidebarDiv"></div>
+        <div class="maincontent row form-horizontal">
+            <div class="div_title"><span id="pageTitleSpan">{{title}}</span></div>
+
+            <div class="div_leftContent">
+                {% block content %}{% end %}
+            </div>
+
+            <footer class="text-center">
+                <hr/>
+                <div>
+                    欢迎访问&nbsp;<a href="/" style="font-size: 14px;font-weight: bolder;">Hillstone Test Project Manage Platform</a>,
+                    任何需求，建议或者问题，请直接发送邮件至HS-TC-APG@hillstonenet.com
+                </div>
+                <!--<div>
+                    Welcome access&nbsp;<a href="/" style="font-size: 14px;font-weight: bolder;"> Hillstone Test Project Manage Platform</a>
+                    If you have any demands、advices or bug, you can directly mail(mail address: HS-TC-APG@hillstonenet.com) to us!
+                </div>-->
+                <div>
+                    Copyright © 2017 by Hillstone Networks All rights reserved.
+                </div>
+            </footer>
+        </div>
+
+    </div>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="{{ static_url('thirdpart/jquery-1.9.1/jquery-1.9.1.min.js') }}"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{{ static_url('thirdpart/bootstrap-3.3.5/js/bootstrap.min.js') }}"></script>
+    <!--index的js封装-->
+    <script src="{{ static_url('js/global.js') }}"></script>
+    <script src="{{ static_url('js/head.js') }}"></script>
+    <script src="{{ static_url('js/initLeftBar.js') }}"></script>
+
+
+    <!--子页面需要的js导入部分-->
+    {% block scriptImport %}
+
+    {% end %}
+
+<div class="modal" id="ajaxLoadingGif" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="" class="div_ajax_gif">
+        <div class="modal-content" style="">
+            <img src="{{ static_url('img/ajaxloading.gif') }}">
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+
+    <script>
+        $(document).ready(function() {
+            // 初始化菜单
+            initLeftMenu('{{user["menulist"]}}', '{{active_menu}}');
+            initShowOrHideBtnClick();
+        });
+
+
+
+    </script>
+
+<input type="hidden" id="barMenu" value="">
+<input type="hidden" id="hidden_userId" value="{{user['id']}}" name="{{user['showname']}}"/>
+<input type="hidden" id="hidden_userRoleId" value="{{user['role_id']}}"/>
+</body>
+</html>

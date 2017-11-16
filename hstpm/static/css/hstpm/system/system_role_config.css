@@ -1,0 +1,23 @@
+/*
+角色配置页面相关css
+pzhang
+2017.8.11
+*/
+
+/*搜索角色表单样式*/
+.div_search_role{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.div_search_role input[type=text] {
+    vertical-align: middle;
+}
+
+/*分页部分样式*/
+.div_page{
+    width: 100%;
+    margin: 10px auto;
+}
+.input_count{
+    width: 50px;
+}

@@ -1,0 +1,128 @@
+<table class="tb_apply_temp">
+    <caption>自动化测试申请表</caption>
+    <tbody>
+    <tr>
+        <td class="td_label">项目名称</td>
+        <td>{{proj_info['projName_val']}}</td>
+
+        <td class="td_label">发布日期</td>
+        <td>{{proj_info['projPubDate_val']}}</td>
+    </tr>
+    <tr>
+        <td class="td_label" >FR链接</td>
+        <td>{{proj_info['frLink_val']}}</td>
+
+        <td class="td_label">研发接口人</td>
+        <td>{{proj_info['projLiaison_val']}}</td>
+    </tr>
+    <tr>
+        <td colspan="4" class="td_label_title">项目简介</td>
+    </tr>
+    <tr>
+        <td colspan="4"><textarea id="desc">{{proj_info["desc_val"]}}</textarea></td>
+    </tr>
+    <tr class="td_label_header">
+        <td colspan="4">自动化测试需求信息</td>
+    </tr>
+    <tr>
+        <td class="td_label">StoneOS软件基线</td>
+        <td><input type="text" id="stoneOsBaseLine" value="{{proj_info['stoneOsBaseLine_val']}}"></td>
+        <td>测试版本路径</td>
+        <td><input type="text" id="testImage" value="{{proj_info['testImage_val']}}"></td>
+    </tr>
+    <tr>
+        <td>测试平台</td>
+        <td><input type="text" id="platform" value="{{proj_info['platform_val']}}"></td>
+
+        <td>期望开始日期</td>
+        <td><input type="text" id="expectTestStartDate" value="{{proj_info['expectTestStartDate_val']}}"></td>
+    </tr>
+    <tr>
+        <td colspan="4" class="td_label_title">其他说明</td>
+    </tr>
+    <tr>
+        <td colspan="4"><textarea id="otherExplain">{{proj_info["otherExplain_val"]}}</textarea></td>
+    </tr>
+    <tr>
+        <td colspan="4" class="td_label_header">新平台测试填写</td>
+    </tr>
+    <tr>
+        <td>设备名称</td>
+        <td><input type="text" id="newPlatDevName" value="{{proj_info['newPlatDevName_val']}}"></td>
+
+        <td>版本名称</td>
+        <td><input type="text" id="newPlatVersion" value="{{proj_info['newPlatVersion_val']}}"></td>
+    </tr>
+    <tr>
+        <td>默认hostname</td>
+        <td><input type="text" id="defaultHostName" value="{{proj_info['defaultHostName_val']}}"></td>
+
+        <td>管理员账号</td>
+        <td><input type="text" id="adminAccountInfo" value="{{proj_info['adminAccountInfo_val']}}"></td>
+    </tr>
+    <tr class="td_label_title">
+        <td>特性</td>
+        <td>是否支持</td>
+        <td>默认状态</td>
+        <td>unsetall后状态</td>
+    </tr>
+    <tr>
+        <td>urldb</td>
+        <td><input type="text" id="urldb_support" value="{{proj_info['urldb_support_val']}}"></td>
+        <td><input type="text" id="urldb_defaultStatus" value="{{proj_info['urldb_defaultStatus_val']}}"></td>
+        <td><input type="text" id="urldb_unsetallStatus" value="{{proj_info['urldb_unsetallStatus_val']}}"></td>
+    </tr>
+    <tr>
+        <td>vsys</td>
+        <td><input type="text" id="vsys_support" value="{{proj_info['vsys_support_val']}}"></td>
+        <td><input type="text" id="vsys_defaultStatus" value="{{proj_info['vsys_defaultStatus_val']}}"></td>
+        <td><input type="text" id="vsys_unsetallStatus" value="{{proj_info['vsys_unsetallStatus_val']}}"></td>
+    </tr>
+    <tr>
+        <td>vr</td>
+        <td><input type="text" id="vr_support" value="{{proj_info['vr_support_val']}}"></td>
+        <td><input type="text" id="vr_defaultStatus" value="{{proj_info['vr_defaultStatus_val']}}"></td>
+        <td><input type="text" id="vr_unsetallStatus" value="{{proj_info['vr_unsetallStatus_val']}}"></td>
+    </tr>
+    <tr class="td_label_title">
+        <td colspan="2">项目</td>
+        <td>结果</td>
+        <td>备注</td>
+    </tr>
+    <tr>
+        <td colspan="2" class="td_label_long">支持console命令行使用</td>
+        <td><input type="text" id="commandLineSupportResult" value="{{proj_info['commandLineSupportResult_val']}}"></td>
+        <td><input type="text" id="commandLineComments" value="{{proj_info['commandLineComments_val']}}"></td>
+    </tr>
+    <tr>
+        <td colspan="2" class="td_label_long">使用中是否需要shell密码</td>
+        <td><input type="text" id="shellPwResult" value="{{proj_info['shellPwResult_val']}}"></td>
+        <td><input type="text" id="shellPwComments" value="{{proj_info['shellPwComments_val']}}"></td>
+    </tr>
+    <tr>
+        <td colspan="2" class="td_label_long">命令行支持reboot和unsetall</td>
+        <td><input type="text" id="rebootUnsetallResult" value="{{proj_info['rebootUnsetallResult_val']}}"></td>
+        <td><input type="text" id="rebootUnsetallComments" value="{{proj_info['rebootUnsetallComments_val']}}"></td>
+    </tr>
+    <tr>
+        <td colspan="2" class="td_label_long">unsetall支持保留接口配置和特征库</td>
+        <td><input type="text" id="unsetallSaveConfigResult" value="{{proj_info['unsetallSaveConfigResult_val']}}"></td>
+        <td><input type="text" id="unsetallSaveConfigComments" value="{{proj_info['unsetallSaveConfigComments_val']}}"></td>
+    </tr>
+    <tr>
+        <td colspan="2" class="td_label_long">可接受reboot/unsetall最长时间</td>
+        <td><input type="text" id="longestRebootTimeResult" value="{{proj_info['longestRebootTimeResult_val']}}"></td>
+        <td><input type="text" id="longestRebootTimeComments" value="{{proj_info['longestRebootTimeComments_val']}}"></td>
+    </tr>
+    <tr>
+        <td colspan="2" class="td_label_long">正常使用过程中console是否有打印信息</td>
+        <td><input type="text" id="consolePrintResult" value="{{proj_info['consolePrintResult_val']}}"></td>
+        <td><input type="text" id="consolePrintComments" value="{{proj_info['consolePrintComments_val']}}"></td>
+    </tr>
+    <tr>
+        <td colspan="2" class="td_label_long">登录以后是否需要等待和检查才能继续测试</td>
+        <td><input type="text" id="startCheckResult" value="{{proj_info['startCheckResult_val']}}"></td>
+        <td><input type="text" id="startCheckComments" value="{{proj_info['startCheckComments_val']}}"></td>
+    </tr>
+    </tbody>
+</table>

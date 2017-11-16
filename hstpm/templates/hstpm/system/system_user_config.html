@@ -1,0 +1,87 @@
+<!--
+用户列表页面
+pzhang
+2017.8.11
+-->
+
+{% extends "../../public/head.html" %}
+
+{% block cssLink %}
+    <link href="{{ static_url('css/hstpm/system/system_user_config.css') }}" rel="stylesheet">
+{% end %}
+
+{% block content %}
+<!--搜索用户表单-->
+<div class="div_search_user" id="searchForm" onkeypress="enterToSearch(event, 'searchUserList(1)')">
+    <input type="text" placeholder="ID" id="userIdInput">
+    <input type="text" placeholder="名称" id="userNameInput">
+    <select id="userRoleIdSelect" onchange="searchUserList(1)">
+        <!--用户角色下拉列表-->
+    </select>
+    <input type="text" placeholder="部门" id="userDepartmentInput">
+    <button type="button" class="btn btn-primary btn-xs" onclick="searchUserList(1)">搜索</button>
+    <button type="button" class="btn btn-danger btn-xs" onclick="resetForm('searchForm')">重置</button>
+</div>
+
+<!--搜索结果显示列表-->
+<table class="table table-striped table-bordered table-hover table-condensed" id="tableUserList">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>名称</th>
+        <th>邮箱</th>
+        <th>角色</th>
+        <th>部门</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
+
+<!--分页信息-->
+<div class="row div_page">
+    <div class="col-md-4" onkeypress="enterToSearch(event, 'searchUserList(1)')">
+        每页&nbsp;<input type="number" min="0" max="100" id="pageSize" class="input_count text-center" value="10" >&nbsp;条记录
+    </div>
+    <div class="col-md-4 text-center">
+        共&nbsp;<span id="totalPage"></span>&nbsp;页
+        &nbsp;&nbsp;&nbsp;
+        共&nbsp;<span id="totalRecord"></span>&nbsp;条记录
+    </div>
+    <div class="col-md-4 text-right" onkeypress="enterToSearch(event, 'searchUserList(\'currentpage\')')">
+        <a id="firstPage"><span class="glyphicon glyphicon-step-backward"></span></a>
+        <a id="previousPage"><span class="glyphicon glyphicon-chevron-left"></span></a>
+        第&nbsp;<input type="number" min="1" id="currentPage" class="input_count text-center" value="1">&nbsp;页
+        <a id="nextPage"><span class="glyphicon glyphicon-chevron-right"></span></a>
+        <a id="lastPage"><span class="glyphicon glyphicon-step-forward"></span></a>
+    </div>
+</div>
+
+<!--点击设置用户角色弹出来的模态框-->
+<div class="modal" id="div_set_user_role_modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">请选择用户角色</h4>
+            </div>
+            <div class="modal-body">
+                <select class="form-control" id="roleSelect">
+                    <!--用户角色下拉列表-->
+                </select>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" id="setRoleBtn">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% end %}
+
+{% block scriptImport %}
+    <script src="{{ static_url('js/hstpm/system/system_user_config.js') }}"></script>
+{% end %}

@@ -1,0 +1,14 @@
+/*
+项目运维-项目申请页面相关css
+pzhang
+2017.8.11
+*/
+.div_apply_btn {
+    margin-top: 10px;
+    text-align: right;
+    padding-right: 6%;
+}
+
+.div_apply_btn button {
+    margin-right: 10px;
+}

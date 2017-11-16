@@ -1,0 +1,27 @@
+/*
+项目运维-项目查询页面相关css
+pzhang
+2017.8.11
+*/
+
+/*搜索所有项目表单样式*/
+.div_search_project {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.div_search_project input[type=text] {
+    vertical-align: top;
+    width: 100px;
+}
+.div_search_project button {
+    margin-bottom: 3px;
+}
+
+/*分页部分样式*/
+.div_page {
+    width: 100%;
+    margin: 10px auto;
+}
+.input_count {
+    width: 50px;
+}

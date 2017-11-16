@@ -1,0 +1,34 @@
+/*
+项目运维-我负责的项目页面相关css
+pzhang
+2017.8.11
+*/
+
+/*搜索我负责的项目表单样式*/
+.div_own_project{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.div_own_project input[type=text] {
+    vertical-align: top;
+    width: 100px;
+}
+.div_own_project button {
+    margin-bottom: 3px;
+}
+
+/*操作按钮设置小一点12*0.75=9px，Chrome浏览器支持的最小字体是12px*/
+.glyphicon-triangle-left,
+.glyphicon-triangle-right{
+    -webkit-transform: scale(0.75);
+    font-size: 12px;
+}
+
+/*分页部分样式*/
+.div_page{
+    width: 100%;
+    margin: 10px auto;
+}
+.input_count{
+    width: 50px;
+}
